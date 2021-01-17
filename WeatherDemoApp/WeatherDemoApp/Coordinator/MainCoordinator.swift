@@ -51,8 +51,10 @@ class MainCoordinator: Coordinator {
      Show AdDetailsViewController
      - Parameter adViewModel: adViewModel
      */
-    func showAdDetailWeatherVC () {
+    func showAdDetailWeatherVCForCity (_ city: City) {
         let vc = DetailWeatherViewController()
+        vc.city = city
+        vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
 }

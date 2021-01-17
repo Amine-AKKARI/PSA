@@ -43,7 +43,7 @@ extension CitiesViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        coordinator?.showAdDetailWeatherVCForCity(cities[indexPath.row])
     }
 }
 

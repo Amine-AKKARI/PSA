@@ -7,24 +7,17 @@
 //
 
 import UIKit
+import WeatherFramework
 
 class DetailWeatherViewController: UIViewController {
 
+    weak var coordinator: MainCoordinator?
+    var city:City! 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        WeatherService.weatherDataForLocation(latitude: city.latitude, longitude: city.longitude) { (viewModel, error) in
+            print ("eeeee")
+        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
