@@ -9,14 +9,25 @@ import Foundation
 
 struct WeatherData: Codable {
     let current: Current
-    let daily: [Current]
+    let daily: [Daily]
 }
 
 struct Current: Codable {
     let dt: Double
+    let temp:Float
     let weather: [Weather]
 }
 
+struct Daily: Codable {
+    let dt: Double
+    let temp: Temperature
+    let weather: [Weather]
+}
+
+struct Temperature: Codable {
+    let min: Float
+    let max: Float
+}
 
 struct Weather: Codable {
     let id: Int
