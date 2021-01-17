@@ -31,11 +31,23 @@ class SelectCityViewController: UIViewController {
     @objc func Validate (){
         guard let city = cityNameTextField.text else {return}
         LocationGeocoder.getCoordinateFrom(address: city) { coordinate, error in
-            guard let coordinate = coordinate, error == nil else { return }
+            guard let coordinate = coordinate, error == nil else {
+                let alert = UIAlertController(title: "", message: "Please enter a correct city name", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler:nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
             let city = City(name: city, latitude: coordinate.latitude, longitude: coordinate.longitude)
             DispatchQueue.main.async {
-                self.delegate?.didAddCity(city: city)
-                self.coordinator?.dismissSelectCityVC(vc: self)
+                if (City.AlreadyAdded(city: city)) {
+                    let alert = UIAlertController(title: "", message: "This city has already been added", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler:nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                else {
+                    self.delegate?.didAddCity(city: city)
+                    self.coordinator?.dismissSelectCityVC(vc: self)
+                }
             }
         }
     }

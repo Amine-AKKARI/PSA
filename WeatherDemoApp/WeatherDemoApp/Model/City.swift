@@ -33,6 +33,13 @@ struct City: Codable {
             UserDefaults.standard.set(encoded, forKey: "cities")
         }
     }
+    
+    static func AlreadyAdded(city: City) -> Bool {
+        let added = cities?.filter {addedCity in
+            return city.name.lowercased() == addedCity.name.lowercased()
+        }
+        return (added?.count ?? 0 > 0) ? true : false
+    }
 }
 
 
