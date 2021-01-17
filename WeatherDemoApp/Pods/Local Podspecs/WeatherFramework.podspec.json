@@ -1,0 +1,18 @@
+{
+  "name": "WeatherFramework",
+  "version": "1.0.0",
+  "summary": "A weather framework that gets weather information for each city.",
+  "description": "A weather framework that can be used in ios Apps to get weather information for cities added by the user",
+  "homepage": "https://www.groupe-psa.com/fr/",
+  "license": "MIT",
+  "authors": "Amine AKKARI",
+  "platforms": {
+    "ios": "11.0"
+  },
+  "source": {
+    "path": "."
+  },
+  "source_files": "WeatherFramework",
+  "swift_versions": "5.0",
+  "swift_version": "5.0"
+}
