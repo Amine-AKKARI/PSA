@@ -8,10 +8,31 @@
 
 import Foundation
 
-struct City: Codable, Equatable {
+struct City: Codable {
     let name: String
     let latitude: Double
     let longitude: Double
+    
+    static var cities:[City]? {
+        if let objects = UserDefaults.standard.value(forKey: "cities") as? Data {
+            let decoder = JSONDecoder()
+            if let objectsDecoded = try? decoder.decode(Array.self, from: objects) as [City] {
+                return objectsDecoded
+            }
+            else {
+                return nil
+            }
+        }else {
+            return nil
+        }
+    }
+    
+    static func saveCities(cities: [City]) {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(cities){
+            UserDefaults.standard.set(encoded, forKey: "cities")
+        }
+    }
 }
 
 

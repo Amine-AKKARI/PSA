@@ -19,6 +19,8 @@ class CitiesViewController: UIViewController {
         // Do any additional setup after loading the view.
         let addCityButton = UIBarButtonItem(title: "Add City", style: .plain, target: self, action: #selector(AddCity))
         self.navigationItem.rightBarButtonItem  = addCityButton
+        guard  let savedCities = City.cities else {return}
+        cities = savedCities
     }
     
     @objc func AddCity (){
@@ -49,6 +51,7 @@ extension CitiesViewController: UITableViewDelegate, UITableViewDataSource {
 extension CitiesViewController: AddCityDelegate {
     func didAddCity(city: City) {
         cities.append(city)
+        City.saveCities(cities: cities)
         tableview.reloadData()
     }
 }
