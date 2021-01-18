@@ -52,7 +52,8 @@ class MainCoordinator: Coordinator {
      - Parameter adViewModel: adViewModel
      */
     func showAdDetailWeatherVCForCity (_ city: City) {
-        let vc = DetailWeatherViewController()
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc: DetailWeatherViewController = storyboard.instantiateViewController(withIdentifier: "DetailWeatherVC") as! DetailWeatherViewController
         vc.city = city
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)

@@ -31,6 +31,7 @@
 		673B835425B6021600AF4A9A /* CurrentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673B835325B6021600AF4A9A /* CurrentViewModelTests.swift */; };
 		673B835625B6059000AF4A9A /* DailyViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673B835525B6059000AF4A9A /* DailyViewModelTests.swift */; };
 		673B835825B607DB00AF4A9A /* WeatherServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673B835725B607DB00AF4A9A /* WeatherServiceTests.swift */; };
+		673B835A25B63C8A00AF4A9A /* DailyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673B835925B63C8A00AF4A9A /* DailyCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		673B835325B6021600AF4A9A /* CurrentViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentViewModelTests.swift; sourceTree = "<group>"; };
 		673B835525B6059000AF4A9A /* DailyViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewModelTests.swift; sourceTree = "<group>"; };
 		673B835725B607DB00AF4A9A /* WeatherServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceTests.swift; sourceTree = "<group>"; };
+		673B835925B63C8A00AF4A9A /* DailyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCell.swift; sourceTree = "<group>"; };
 		E539726526FA2E1C612F30FC /* Pods-WeatherDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherDemoApp.release.xcconfig"; path = "Target Support Files/Pods-WeatherDemoApp/Pods-WeatherDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		F1101FB4DDD044E2C7F69E20 /* Pods_WeatherDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				673B82C925B3754D00AF4A9A /* CityCell.swift */,
+				673B835925B63C8A00AF4A9A /* DailyCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				673B82B925B33A9D00AF4A9A /* MainCoordinator.swift in Sources */,
 				673B828025B32B2400AF4A9A /* AppDelegate.swift in Sources */,
 				673B828225B32B2400AF4A9A /* SceneDelegate.swift in Sources */,
+				673B835A25B63C8A00AF4A9A /* DailyCell.swift in Sources */,
 				673B82C125B34BA900AF4A9A /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

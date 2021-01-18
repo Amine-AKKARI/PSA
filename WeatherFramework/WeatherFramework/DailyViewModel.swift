@@ -8,10 +8,10 @@
 import Foundation
 
 public struct DailyViewModel {
-    var date = ""
-    var tempMin = ""
-    var tempMax = ""
-    var weather: [WeatherViewModel]!
+    public var date = ""
+    public var tempMin = ""
+    public var tempMax = ""
+    public var weather: [WeatherViewModel]!
     
     init (daily: Daily) {
         self.date = createDateFrom(daily.dt)

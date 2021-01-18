@@ -7,10 +7,10 @@
 
 import Foundation
 public struct WeatherViewModel {
-    let id:Int
-    let main: String
-    let description: String
-    let icon: UIImage?
+    public let id:Int
+    public let main: String
+    public let description: String
+    public let icon: UIImage?
     
     init (weather: Weather) {
         self.id = weather.id
