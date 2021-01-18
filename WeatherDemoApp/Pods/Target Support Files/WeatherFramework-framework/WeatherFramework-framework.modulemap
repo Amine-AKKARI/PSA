@@ -1,5 +1,5 @@
 framework module WeatherFramework {
-  umbrella header "WeatherFramework-umbrella.h"
+  umbrella header "WeatherFramework-framework-umbrella.h"
 
   export *
   module * { export * }

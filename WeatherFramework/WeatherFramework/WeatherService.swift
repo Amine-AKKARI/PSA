@@ -20,7 +20,7 @@ public class WeatherService {
     
     public typealias WeatherDataCompletion = (WeatherDataViewModel?, OpenWeatherMapError?) -> ()
     
-    public static let apiKey = "bff7cffa4f5e24190b8e1922faad7935"
+    private static let apiKey = "bff7cffa4f5e24190b8e1922faad7935"
     private static let host = "api.openweathermap.org"
     private static let path = "/data/2.5/onecall"
     private static let units = "metric"
@@ -44,25 +44,25 @@ public class WeatherService {
             //execute completion handler on main thread
             DispatchQueue.main.async {
                 guard error == nil else {
-                    print("Failed request from Weatherbit: \(error!.localizedDescription)")
+                    print("Failed request from Weatherapi: \(error!.localizedDescription)")
                     completion(nil, .failedRequest)
                     return
                 }
                 
                 guard let data = data else {
-                    print("No data returned from Weatherbit")
+                    print("No data returned from Weatherapi")
                     completion(nil, .noData)
                     return
                 }
                 
                 guard let response = response as? HTTPURLResponse else {
-                    print("Unable to process Weatherbit response")
+                    print("Unable to process Weatherapi response")
                     completion(nil, .invalidResponse)
                     return
                 }
                 
                 guard response.statusCode == 200 else {
-                    print("Failure response from Weatherbit: \(response.statusCode)")
+                    print("Failure response from Weatherapi: \(response.statusCode)")
                     completion(nil, .failedRequest)
                     return
                 }
@@ -82,7 +82,7 @@ public class WeatherService {
                     let weatherDataViewModel = WeatherDataViewModel(weatherData: weatherData)
                     completion(weatherDataViewModel, nil)
                 } catch {
-                    print("Unable to decode Weatherbit response: \(error.localizedDescription)")
+                    print("Unable to decode Weatherapi response: \(error.localizedDescription)")
                     completion(nil, .invalidData)
                 }
             }

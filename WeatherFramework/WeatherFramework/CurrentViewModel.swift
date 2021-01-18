@@ -6,10 +6,10 @@
 //
 
 import Foundation
-struct CurrentViewModel {
-    var date = ""
-    var temp = ""
-    var weather:[WeatherViewModel]!
+public struct CurrentViewModel {
+    public var date = ""
+    public var temp = ""
+    public var weather:[WeatherViewModel]!
     
     init (current: Current) {
         self.date = createDateFrom(current.dt)

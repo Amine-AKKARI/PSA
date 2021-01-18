@@ -10,8 +10,8 @@ import UIKit
 
 public struct WeatherDataViewModel {
     
-    var current: CurrentViewModel
-    var daily: [DailyViewModel]!
+    public var current: CurrentViewModel
+    public var daily: [DailyViewModel]!
 
     init (weatherData: WeatherData) {
         self.current = CurrentViewModel(current: weatherData.current)
