@@ -11,11 +11,12 @@ import WeatherFramework
 
 class DetailWeatherViewController: UIViewController {
 
+    
+    @IBOutlet var currentWeatherView: UIView!
     @IBOutlet var currentWeatherImageView: UIImageView!
     @IBOutlet var currentWeatherTemp: UILabel!
     @IBOutlet var currentWeatherMain: UILabel!
     @IBOutlet var currentWeatherDate: UILabel!
-    
     @IBOutlet var dailyTableView: UITableView!
     weak var coordinator: MainCoordinator?
     var city:City!
@@ -23,6 +24,8 @@ class DetailWeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentWeatherView.isHidden = true
+        dailyTableView.isHidden = true
         WeatherService.weatherDataForLocation(latitude: city.latitude, longitude: city.longitude) { (weatherDataViewModel, error) in
             guard let weatherDataViewModel = weatherDataViewModel else {return}
             self.weatherDataViewModel = weatherDataViewModel
@@ -31,6 +34,8 @@ class DetailWeatherViewController: UIViewController {
     }
     
     func configureView (weatherDataViewModel: WeatherDataViewModel) {
+        currentWeatherView.isHidden = false
+        dailyTableView.isHidden = false
         currentWeatherImageView.image = weatherDataViewModel.current.weather[0].icon
         currentWeatherTemp.text = weatherDataViewModel.current.temp
         currentWeatherMain.text = weatherDataViewModel.current.weather[0].description
