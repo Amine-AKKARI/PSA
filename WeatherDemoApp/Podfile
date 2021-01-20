@@ -2,13 +2,13 @@ platform :ios, '11.0'
 
 target 'WeatherDemoApp' do
   use_frameworks!
-  pod 'WeatherFramework', :path => 'https://github.com/Amine-AKKARI/PSA.git', :branch => 'master'
+  pod 'WeatherFramework', :git => 'https://github.com/Amine-AKKARI/PSA.git'
 end
 
 target 'WeatherDemoAppTests' do
    inherit! :search_paths
    # Pods for testing
-   pod 'WeatherFramework', :path => 'https://github.com/Amine-AKKARI/PSA.git', :branch => 'master'
+   pod 'WeatherFramework', :git => 'https://github.com/Amine-AKKARI/PSA.git'
  end
 
 # Workaround for Cocoapods issue #7606

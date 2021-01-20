@@ -2,15 +2,20 @@ PODS:
   - WeatherFramework (1.0.0)
 
 DEPENDENCIES:
-  - WeatherFramework (from `../WeatherFramework`)
+  - WeatherFramework (from `https://github.com/Amine-AKKARI/PSA.git`)
 
 EXTERNAL SOURCES:
   WeatherFramework:
-    :path: "../WeatherFramework"
+    :git: https://github.com/Amine-AKKARI/PSA.git
+
+CHECKOUT OPTIONS:
+  WeatherFramework:
+    :commit: 6aec6c45248f3a60d93fed43e45646a90877fd8d
+    :git: https://github.com/Amine-AKKARI/PSA.git
 
 SPEC CHECKSUMS:
-  WeatherFramework: 102cc7baf707b80df3fa54a9fe578d7c0f2616a6
+  WeatherFramework: 539479ea8f14071ad5b5d943a26984a13e108c26
 
-PODFILE CHECKSUM: 9403c43a189b005bf2e67e9f0051658b79e0678e
+PODFILE CHECKSUM: 3f89818c3f18745f7a3e294f079a6e2567e17228
 
 COCOAPODS: 1.10.1
