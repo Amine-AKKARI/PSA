@@ -7,7 +7,7 @@ s.homepage     = "https://www.groupe-psa.com/fr/"
 s.license      = "MIT"
 s.author              = "Amine AKKARI"
 s.platform     = :ios, "11.0"
-s.source       = { :path => '.' }
+s.source       = :git => 'git@game-factory-01-dmz:gdk/bridge-helper-ios.git', :branch => 'master'
 s.source_files = "WeatherFramework/WeatherFramework"
 s.swift_version = "5.0" 
 
