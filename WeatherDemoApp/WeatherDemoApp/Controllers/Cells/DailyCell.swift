@@ -30,7 +30,7 @@ class DailyCell: UITableViewCell {
     func configureWith(dailyViewModel: DailyViewModel) {
         dailyDateLabel.text = dailyViewModel.date
         dailyTemperaturesLabel.text = "\(dailyViewModel.tempMin) / \(dailyViewModel.tempMax)"
-        dailyMainLabel.text = dailyViewModel.weather[0].main
+        dailyMainLabel.text = dailyViewModel.weather[0].description
         dailyIconImageView.image = dailyViewModel.weather[0].icon
     }
 }

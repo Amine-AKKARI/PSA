@@ -33,7 +33,7 @@ class DetailWeatherViewController: UIViewController {
     func configureView (weatherDataViewModel: WeatherDataViewModel) {
         currentWeatherImageView.image = weatherDataViewModel.current.weather[0].icon
         currentWeatherTemp.text = weatherDataViewModel.current.temp
-        currentWeatherMain.text = weatherDataViewModel.current.weather[0].main
+        currentWeatherMain.text = weatherDataViewModel.current.weather[0].description
         currentWeatherDate.text = weatherDataViewModel.current.date
         dailyTableView.reloadData()
     }
