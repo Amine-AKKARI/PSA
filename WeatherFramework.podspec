@@ -8,7 +8,7 @@ s.license      = "MIT"
 s.author              = "Amine AKKARI"
 s.platform     = :ios, "11.0"
 s.source       = { :path => '.' }
-s.source_files = "WeatherFramework"
+s.source_files = "WeatherFramework/WeatherFramework"
 s.swift_version = "5.0" 
 
 end

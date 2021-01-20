@@ -24,6 +24,7 @@ public class WeatherService {
     private static let host = "api.openweathermap.org"
     private static let path = "/data/2.5/onecall"
     private static let units = "metric"
+    private static let cache = "max-age=30"
     
     
      public class func weatherDataForLocation(latitude: Double, longitude: Double, completion: @escaping WeatherDataCompletion) {
@@ -35,20 +36,15 @@ public class WeatherService {
             URLQueryItem(name: "lat", value: "\(latitude)"),
             URLQueryItem(name: "lon", value: "\(longitude)"),
             URLQueryItem(name: "units", value: units),
-            URLQueryItem(name: "appid", value: apiKey)
+            URLQueryItem(name: "appid", value: apiKey),
+            URLQueryItem(name: "Cache-Control", value: cache)
         ]
         
         let url = urlBuilder.url!
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        URLSession.shared.configuration.requestCachePolicy = .returnCacheDataElseLoad
+        URLSession.shared.dataTask(with: url, cachedResponseOnError: true) { (data, response, error) in
             //execute completion handler on main thread
             DispatchQueue.main.async {
-                guard error == nil else {
-                    print("Failed request from Weatherapi: \(error!.localizedDescription)")
-                    completion(nil, .failedRequest)
-                    return
-                }
-                
                 guard let data = data else {
                     print("No data returned from Weatherapi")
                     completion(nil, .noData)
@@ -87,5 +83,19 @@ public class WeatherService {
                 }
             }
         }.resume()
+    }
+}
+
+extension URLSession {
+    func dataTask(with url: URL, cachedResponseOnError: Bool, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
+        return self.dataTask(with: url) { (data, response, error) in
+            if cachedResponseOnError,
+                let error = error,
+                let cachedResponse = self.configuration.urlCache?.cachedResponse(for: URLRequest(url: url)) {
+                completionHandler(cachedResponse.data, cachedResponse.response, error)
+                return
+            }
+            completionHandler(data, response, error)
+        }
     }
 }

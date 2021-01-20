@@ -1,0 +1,16 @@
+PODS:
+  - WeatherFramework (1.0.0)
+
+DEPENDENCIES:
+  - WeatherFramework (from `../WeatherFramework`)
+
+EXTERNAL SOURCES:
+  WeatherFramework:
+    :path: "../WeatherFramework"
+
+SPEC CHECKSUMS:
+  WeatherFramework: 102cc7baf707b80df3fa54a9fe578d7c0f2616a6
+
+PODFILE CHECKSUM: 9403c43a189b005bf2e67e9f0051658b79e0678e
+
+COCOAPODS: 1.10.1
