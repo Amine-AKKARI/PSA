@@ -36,53 +36,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D3705214-250F-425A-9FA4-F8FF9598542C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/WeatherFramework/WeatherFramework/WeatherFramework/WeatherService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "weatherDataForLocation(latitude:longitude:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D3705214-250F-425A-9FA4-F8FF9598542C - 9125e511af8278a4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static WeatherFramework.WeatherService.weatherDataForLocation(latitude: Swift.Double, longitude: Swift.Double, completion: (Swift.Optional&lt;WeatherFramework.WeatherDataViewModel&gt;, Swift.Optional&lt;WeatherFramework.OpenWeatherMapError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "WeatherFramework"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro/Desktop/Weather/WeatherDemoApp/Pods/WeatherFramework/WeatherFramework/WeatherFramework/WeatherService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "2524">
-               </Location>
-               <Location
-                  uuid = "D3705214-250F-425A-9FA4-F8FF9598542C - fce914f6a5e679fc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static WeatherFramework.WeatherService.weatherDataForLocation(latitude: Swift.Double, longitude: Swift.Double, completion: (Swift.Optional&lt;WeatherFramework.WeatherDataViewModel&gt;, Swift.Optional&lt;WeatherFramework.OpenWeatherMapError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "WeatherFramework"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro/Desktop/Weather/WeatherDemoApp/Pods/WeatherFramework/WeatherFramework/WeatherFramework/WeatherService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "278">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
